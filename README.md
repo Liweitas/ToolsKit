@@ -1,5 +1,30 @@
 # ToolsKit
 
+
+## 运行方法
+```shell
+tree -L 1|more
+.
+├── alicdn_links.json
+├── downloads
+├── failed_downloads.json
+├── merge.py
+├── merged_chat_records.json
+├── 淘品10月
+├── 骊跃10月
+├── 淘品11月
+├── 骊跃11月
+├── 淘品12月
+├── 骊跃12月
+├── 家电核心10月
+├── 家电核心11月
+└── 家电核心12月
+```
+在这样的目录下，运行以下脚本
+```shell
+python3 merge.py
+```
+
 ```python
 import json
 import os
@@ -194,6 +219,45 @@ if __name__ == "__main__":
     main()
 ```
 
+
+
+### 完成之后
+downloads 下
+
+```shell
+downloads
+├── 2024-10-01
+├── 2024-10-02
+├── 2024-10-03
+├── 2024-10-04
+├── 2024-10-05
+├── 2024-10-06
+├── 2024-10-07
+├── 2024-10-08
+├── 2024-10-09
+├── 2024-10-10
+├── 2024-10-11
+├── 2024-10-12
+├── 2024-10-13
+├── 2024-10-14
+├── 2024-10-15
+
+downloads/2024-10-01
+├── O1CN01072ZxZ1QWGOWAmGjW_!!0-amp.jpg
+├── O1CN010JhRaC1FT5sdJwixR_!!0-amp.jpg
+├── O1CN010YFqDF1P8cKYF0LK4_!!836701796-2-ampmedia.png
+├── O1CN010dNgRa28W7MTdVI6w_!!0-amp.jpg
+├── O1CN010jvSVt1mXZ4Ab0aBE_!!0-amp.jpg
+├── O1CN010lEWGA1On5iNF093a_!!0-amp.jpg
+├── O1CN0111sI2j1RX0eemhGHc_!!3846712120-2-ampmedia.png
+├── O1CN0116PEeq1aTBtYHPK8V_!!0-amp.jpg
+├── O1CN011AEH1P2A8sUq6UVgE_!!0-amp.jpg
+├── O1CN011AK7TH22Cz7c4JVzJ_!!0-amp.jpg
+```
+
+
+使用以下脚本合并为一个文件夹。
+
 ```shell
 # 设置目标文件夹路径
 TARGET_FOLDER="merged_images"
@@ -206,3 +270,5 @@ find . -type f \( -iname "*.jpg" -o -iname "*.jpeg" -o -iname "*.png" -o -iname 
 
 echo "所有图片已移动到 $TARGET_FOLDER 文件夹中"
 ```
+
+上传到roboflow上
